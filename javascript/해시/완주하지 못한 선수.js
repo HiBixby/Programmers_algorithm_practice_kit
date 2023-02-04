@@ -2,7 +2,7 @@ function solution(participant, completion) {
   let participantDict = {};
   participant.forEach((name) => {
     participantDict[name] =
-      name in participantDict ? participantDict[name]++ : 1;
+      name in participantDict ? participantDict[name] + 1 : 1;
   });
 
   completion.forEach((name) => {
@@ -13,6 +13,6 @@ function solution(participant, completion) {
   return Object.keys(participantDict)[0];
 }
 
-let participant = ["leo", "kiki", "eden"];
-let completion = ["eden", "kiki"];
+let participant = ["mislav", "stanko", "mislav", "ana"];
+let completion = ["stanko", "ana", "mislav"];
 console.log(solution(participant, completion));
