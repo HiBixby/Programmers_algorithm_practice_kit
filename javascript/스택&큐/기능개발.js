@@ -1,10 +1,6 @@
 function solution(progresses, speeds) {
-  let days = [];
+  let days = progresses.map((progress,i)=>Math.ceil((100-progress)/speeds[i]));
   let answer = [0];
-  for (let i = 0; i < progresses.length; i++) {
-    let day = Math.ceil((100 - progresses[i]) / speeds[i]);
-    days.push(day);
-  }
   let max = days[0];
   let release = 0;
   for (let i = 0; i < days.length; i++) {
